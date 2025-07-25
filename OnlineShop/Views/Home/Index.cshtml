@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Товары";
+    var products = ViewBag.Products as List<OnlineShop.Models.Product>;
+    decimal balance = ViewBag.Balance;
+}
+
+<h2>Добро пожаловать!</h2>
+<p><strong>Ваш баланс:</strong> @balance руб.</p>
+
+<h2>Список товаров</h2>
+
+<div class="product-list">
+    @foreach (var item in products)
+    {
+        <div class="product-card">
+            <h4>@item.Name</h4>
+            <p>@item.Description</p>
+            <p><strong>Цена:</strong> @item.Price руб.</p>
+            <a class="btn" href="/Cart/AddToCart?id=@item.Id">Купить</a>
+        </div>
+    }
+</div>

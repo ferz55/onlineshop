@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Недостаточно средств";
+}
+
+<div class="error-container">
+    <h1>💸 Недостаточно средств</h1>
+    <p>У вас недостаточно денег на балансе для завершения покупки.</p>
+    <p class="hint">Пополните счёт или выберите другой товар.</p>
+
+    <a href="/" class="back-btn">Назад к товарам</a>
+</div>
+
+<style>
+    body {
+        background-color: #121212;
+        color: #eee;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 2rem;
+    }
+
+    .error-container {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 600px;
+        margin: 4rem auto;
+        box-shadow: 0 0 10px #f00, 0 0 20px #800;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #f44336;
+        margin-bottom: 1rem;
+    }
+
+    .hint {
+        margin-top: 1rem;
+        font-style: italic;
+        color: #ff8888;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #f44336;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+    }
+
+        .back-btn:hover {
+            background-color: #d32f2f;
+        }
+</style>

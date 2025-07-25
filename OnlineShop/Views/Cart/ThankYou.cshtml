@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Спасибо за покупку";
+}
+
+<div class="thank-you-container">
+    <h1>🎉 Спасибо за покупку!</h1>
+    <p>Ваш заказ успешно оформлен и оплачен.</p>
+    <a href="/" class="back-btn">Вернуться в магазин</a>
+</div>
+
+<style>
+    body {
+        background-color: #121212;
+        color: #eee;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 2rem;
+    }
+
+    .thank-you-container {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 600px;
+        margin: 4rem auto;
+        box-shadow: 0 0 10px #0f0, 0 0 20px #0f0a;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #0f0;
+        margin-bottom: 1rem;
+    }
+
+    .fake-note {
+        margin-top: 1rem;
+        color: #ff4f4f;
+        font-style: italic;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #0f0;
+        color: #000;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+        background-color: #0c0;
+    }
+</style>
