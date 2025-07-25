@@ -1,24 +1,25 @@
-# Используем официальный образ SDK для сборки
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Копируем csproj и восстанавливаем зависимости
-COPY *.csproj ./
+# Копируем csproj из подпапки OnlineShop
+COPY OnlineShop/*.csproj ./OnlineShop/
+
+# Переходим в папку с проектом и восстанавливаем зависимости
+WORKDIR /app/OnlineShop
 RUN dotnet restore
 
-# Копируем всё и публикуем релизную версию
-COPY . ./
+# Копируем всё из контекста в папку OnlineShop
+COPY . ./ 
+
+# Публикуем релизную версию
 RUN dotnet publish -c Release -o out
 
-# Используем более лёгкий runtime образ
+# Финальный образ для запуска
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Копируем опубликованные файлы из стадии сборки
-COPY --from=build /app/out ./
+COPY --from=build /app/OnlineShop/out ./
 
-# Открываем порт 80
 EXPOSE 80
 
-# Команда запуска приложения
 ENTRYPOINT ["dotnet", "OnlineShop.dll"]
